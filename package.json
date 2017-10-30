@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@nichoth/event-utils": "^0.1.4",
+    "@nichoth/preact-connect": "https://github.com/nichoth/preact-connect/tarball/master",
+    "@nichoth/state": "https://github.com/nichoth/state/tarball/master",
+    "nanobus": "^4.2.0",
+    "preact": "^8.2.6",
+    "route-event": "^1.0.5",
+    "routes": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0"
+  }
+}

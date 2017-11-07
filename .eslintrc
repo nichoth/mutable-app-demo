@@ -1,0 +1,26 @@
+{
+    "extends": ["minlint"],
+    "env": {
+        "es6": true
+    },
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+
+    "plugins": [
+        "react"
+    ],
+    "settings": {
+        "react": {
+            "pragma": "h"
+        }
+    },
+    "rules": {
+        "no-unused-vars": [0, {"args": "none"}],
+        "arrow-parens": [0, "as-needed"]
+    }
+}

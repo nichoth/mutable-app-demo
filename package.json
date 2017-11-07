@@ -1,4 +1,18 @@
 {
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run serve\" \"npm run sass-watch\"",
+    "serve": "budo src/index.jsx:bundle.js --pushstate --dir=public --live -- -t babelify -t [ envify --NODE_ENV development ] -dv",
+    "build": "npm run build-js && npm run build-css",
+    "build-js": "browserify src/index.js --ignore \"@nichoth/wslog/client\" -t babelify -g unassertify | uglifyjs -mc > public/bundle.js",
+    "build-css": "node-sass --output-style=compressed src/style/main.scss > public/style.css",
+    "sass-watch": "node-sass --watch src/style/main.scss --source-map-embed public/style.css",
+    "lint": "eslint .",
+    "test": "tape test/{**/*.js,*.js}",
+    "prepush": "./test/githook/prepush.sh",
+    "log": "wslog",
+    "preversion": "npm run lint && npm test",
+    "postversion": "git push && git push --tags"
+  },
   "dependencies": {
     "@nichoth/event-utils": "^0.1.4",
     "@nichoth/preact-connect": "https://github.com/nichoth/preact-connect/tarball/master",
@@ -9,9 +23,22 @@
     "routes": "^2.1.0"
   },
   "devDependencies": {
+    "@nichoth/wslog": "0.0.7",
+    "babel-core": "^6.26.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
-    "babelify": "^8.0.0"
-  }
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "budo": "^10.0.4",
+    "concurrently": "^3.5.0",
+    "envify": "^4.1.0",
+    "eslint": "^4.10.0",
+    "eslint-config-minlint": "^2.0.0",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "node-sass": "^4.6.0",
+    "unassertify": "^2.1.0"
+  },
+  "private": true
 }

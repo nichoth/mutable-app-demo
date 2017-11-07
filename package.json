@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "concurrently --kill-others \"npm run serve\" \"npm run sass-watch\"",
-    "serve": "budo src/index.jsx:bundle.js --pushstate --dir=public --live -- -t babelify -t [ envify --NODE_ENV development ] -dv",
+    "serve": "budo src/index.js:bundle.js --pushstate --dir=public --live -- -t babelify -t [ envify --NODE_ENV development ] -dv",
     "build": "npm run build-js && npm run build-css",
     "build-js": "browserify src/index.js --ignore \"@nichoth/wslog/client\" -t babelify -g unassertify | uglifyjs -mc > public/bundle.js",
     "build-css": "node-sass --output-style=compressed src/style/main.scss > public/style.css",
@@ -37,7 +37,7 @@
     "eslint-config-minlint": "^2.0.0",
     "eslint-plugin-react": "^7.4.0",
     "husky": "^0.14.3",
-    "node-sass": "^4.6.0",
+    "node-sass": "^4.5.3",
     "unassertify": "^2.1.0"
   },
   "private": true

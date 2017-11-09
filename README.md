@@ -14,11 +14,11 @@ Old school frontend app with mutable state
 
 **virtual dom**
 
-I like preact because it is interoperable with react, which means you have a large ecosystem of ready made components available. Also the api is familiar to many other people who have experience with react. But really, any virtual dom will work with this structure.
+I like preact because it is interoperable with react, which means you have a large ecosystem of ready made components available. Also the api is familiar to many other people who have experience with react. But any virtual dom will work with this structure.
 
 **css**
 
-We're using sass because it works and it's stable and it's what I know. 
+This has sass because it works and it's what I know. Other css processes are good too. I like this because it has a minimum of configuration and build setup, and also is a traditional css pattern that should be familiar to everyone.
 
 
 ## some design choices
@@ -46,7 +46,7 @@ Using `require` statements lets us easily run code in node, which doesn't have `
 
 ### javascript
 
-Javascript is built with budo/browserify. During development we pass a flag to budo `--live` that makes it refresh the browser whenever you save a javascript file. Don't go down the path of "hot reloading" with javascript -- it is not worth the time it takes to configure. If we look at it from another angle, we want our application to load quickly when we refresh the page, so instead of using a build tool hack, optimize the application so that it loads quickly. Now you have a quick feedback cycle during development, and also a quick application. 
+Javascript is built with budo/browserify. During development we pass a flag to budo `--live` that makes it refresh the browser whenever you save a javascript file. I like to intentionally avoid "hot reloading" with javascript -- to me it is not worth the time it takes to configure. From another angle, we want our application to load quickly when we refresh the page, so instead of using a build tool hack, optimize the application so that it loads quickly. Now you have a quick feedback cycle during development, and also a quick application. 
 
 ### css
 

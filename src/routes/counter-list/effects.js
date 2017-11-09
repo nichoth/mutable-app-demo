@@ -11,7 +11,6 @@ function Effects (evs, bus, stores) {
     // call server to create a new counter
     bus.on(evs.view.addCounter, function (ev) {
         ev.preventDefault()
-        console.log('here', ev)
 
         var _id = getId()
         var counter = Counter()

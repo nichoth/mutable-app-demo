@@ -1,4 +1,3 @@
-
 function Update (evs, bus, stores) {
     // requests
     bus.on(evs.http.add.start, function (req) {

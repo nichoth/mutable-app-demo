@@ -9,6 +9,7 @@ function HomeRoute (bus) {
 function RootView (props) {
     return <div>
         <h1>root</h1>
+        <p>this is the root view</p>
     </div>
 }
 

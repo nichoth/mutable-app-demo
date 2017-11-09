@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@nichoth/event-utils": "^0.1.4",
-    "@nichoth/preact-connect": "https://github.com/nichoth/preact-connect/tarball/master",
-    "@nichoth/state": "https://github.com/nichoth/state/tarball/master",
+    "@nichoth/preact-connect": "0.0.1",
+    "@nichoth/state": "0.0.4",
     "nanobus": "^4.2.0",
     "preact": "^8.2.6",
     "route-event": "^1.0.5",

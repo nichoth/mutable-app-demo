@@ -1,11 +1,10 @@
 var Router = require('routes')
 var Bus = require('nanobus')
-var onRoute = require('route-event')
+var onPathChange = require('route-event')
 
 var routeList = [
     ['/', require('./root')],
-    ['/counters', require('./counter-list')],
-    ['/counter/:id', require('./counter')]
+    ['/counters', require('./counter-list')]
 ]
 
 function Routes (onMatch) {
@@ -16,7 +15,7 @@ function Routes (onMatch) {
         router.addRoute(route[0], route[1](bus))
     })
 
-    onRoute(function (path) {
+    onPathChange(function (path) {
         var match = router.match(path)
         if (!match) return console.log('404')
         var view = match.fn(match)

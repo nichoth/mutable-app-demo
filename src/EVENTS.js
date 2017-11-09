@@ -1,12 +1,14 @@
 var namespace = require('@nichoth/event-utils')
 
+var ASYNC = ['start', 'resolve', 'err']
+
 module.exports = namespace({
     counterList: {
-        view: ['addCounter']
-    },
-
-    counter: {
-        view: ['inc', 'dec']
+        http: {
+            add: ASYNC,
+            save: ASYNC
+        },
+        view: ['addCounter', 'saveCounter', 'inc', 'dec', 'reset']
     }
 })
 

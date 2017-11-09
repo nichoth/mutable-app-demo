@@ -1,0 +1,10 @@
+.counter {
+  border: 1px solid black;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+
+  &>* {
+    margin-right: 1em;
+  }
+}

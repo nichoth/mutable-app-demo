@@ -68,7 +68,7 @@ Routes are functions that get called once when the app first loads. They return 
 
 **virtual dom**
 
-Preact is much smaller, but interoperable with react, which means you have a large ecosystem of ready made components available. Also the api is familiar to people who have experience with react. But any virtual dom will work with this structure.
+Preact is smaller than react, but still interoperable with it, which means there is a large ecosystem of ready made components available. Also the api is familiar to people who have experience with react. But any virtual dom will work with this structure.
 
 **css**
 

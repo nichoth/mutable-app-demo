@@ -68,11 +68,11 @@ Routes are functions that get called once when the app first loads. They return 
 
 **virtual dom**
 
-I like preact because it is interoperable with react, which means you have a large ecosystem of ready made components available. Also the api is familiar to many other people who have experience with react. But any virtual dom will work with this structure.
+Preact is much smaller, but interoperable with react, which means you have a large ecosystem of ready made components available. Also the api is familiar to people who have experience with react. But any virtual dom will work with this structure.
 
 **css**
 
-This has sass because it works and it's what I know. Other css processes are good too. I like this because it has a minimum of configuration and build setup, and is a kind of traditional css pattern that should be familiar to everyone.
+This uses node-sass because it has a minimum of configuration and build setup, and is a kind of traditional css pattern that should be familiar to everyone.
 
 
 ## some design choices
@@ -85,11 +85,9 @@ You can take the state machine for this application and drop it into a different
 
 **The only place where things happen is within the route functions**
 
-The only imperative code is within the route functions that get called when the current url matches. The code in `data` is class definitions -- it doesn't do anything unless it is told to do something. The code in `view` is functions that take state and return virtual doms and subscribe to dom events. It doesn't do anything until it is called. The route functions are the only place where we start doing things.
-
+The only imperative code is within the route functions that get called when the current url matches. The code in `data` is class definitions -- it doesn't do anything unless it is told to do something. The code in `view` is function definitions. It doesn't do anything until it is called. The route functions are the only place where we start doing things.
 
 ---------------------------
-
 
 **require, not import**
 
@@ -100,7 +98,9 @@ Using `require` statements lets us run code in node without any transpiling.
 
 ### javascript
 
-Javascript is built with budo/browserify. During development we pass a flag to budo `--live` that makes it refresh the browser whenever you save a javascript file. I like to intentionally avoid "hot reloading" with javascript -- to me it is not worth the time it takes to configure. From another angle, we want our application to load quickly when we refresh the page, so instead of using a build tool hack, optimize the application so that it loads quickly. Now you have a quick feedback cycle during development, and also a quick application. 
+Javascript is built with budo/browserify. During development we pass a flag to budo `--live` that makes it refresh the browser whenever you save a javascript file. This intentionally avoids "hot reloading" with javascript becuase that means we don't have to configure hot reloading.
+
+From another angle, we want our application to load quickly when we refresh the page, so instead of using a build tool hack, optimize the application so that it loads quickly. Now you have a quick feedback cycle during development, and also a quick application. 
 
 ### css 
 

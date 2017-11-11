@@ -14,7 +14,6 @@ function Update (evs, bus, stores) {
     })
 
     bus.on(evs.http.save.resolve, function (ev) {
-        console.log('here', ev)
         stores.pending.clear()
         stores.counters.edit(ev.res)
         stores.http.resolve(ev.req)

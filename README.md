@@ -3,6 +3,11 @@
 Old school frontend app with mutable state
 
 
+## structure
+
+some diagrams and explanation
+
+
 ## some features
 
 * client side routing
@@ -31,7 +36,7 @@ You can take the state machine for this application and drop it into a different
 
 **The only place where things happen is within the route functions**
 
-The only impoerative code is within the route functions that get called when the current url matches. The code in `data` is class definitions -- it doesn't do anything unless it is told to do something. The code in `view` is functions that take state and return virtual doms and subscribe to dom events. It doesn't do anything until it is called. The route functions are the only place where we start doing things.
+The only imperative code is within the route functions that get called when the current url matches. The code in `data` is class definitions -- it doesn't do anything unless it is told to do something. The code in `view` is functions that take state and return virtual doms and subscribe to dom events. It doesn't do anything until it is called. The route functions are the only place where we start doing things.
 
 
 ---------------------------

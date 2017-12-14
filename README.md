@@ -13,7 +13,7 @@ $ npm start
 ## some things this does
 
 * client side routing
-* use a virtual dom for the view via preact
+* use virtual dom for the view (preact)
 * persistance with an api server
 
 ## structure
@@ -34,7 +34,7 @@ $ npm start
 
 ### events
 
-We are using a single event bus for everything. Complexity in event subscriptions is handled by namespacing event names with a tree structure. See [/src/EVENTS.js](/src/EVENTS.js)
+We are using a single event bus for everything. This reduces complexity because there is no logic to think about for subscriptions -- everything is on a single bus. However, since so many events are multiplexed on this bus, we need a good helper for namespacing event names. This app defines all events in a single global object tree, and uses [a recursive naming utility](https://github.com/nichoth/event-utils). A tree structure makes the event names composable, since components can consume just a partial branch of the tree, without needing to know about the parent nodes. See [/src/EVENTS.js](/src/EVENTS.js)
 
 ```js
 namespace({
